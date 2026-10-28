@@ -77,7 +77,9 @@ Font: Poppins, self-hosted in `fonts/` (400-800), declared in `src/css/typograph
 6. **CB Sectors** - photo background, coral curve, cream `<details>` accordion (one open at a time via a shared `name`).
 7. **CB Case Studies** - Swiper of the latest N `case_study` posts.
 8. **CB Testimonials** - orange band, Swiper of quote cards two-up.
-9. **CB LinkedIn** - manual repeater of post cards until a feed is agreed.
+9. **CB LinkedIn** - Source: *Live feed* reads the cache kept by the
+   `cbp-linkedin-feed` plugin (`cbp_linkedin_feed_get_posts()`), falling back
+   to the manual rows while nothing is cached; *Manual rows* uses the repeater.
 10. `[andwis_block]` shortcode.
 11. **CB CTA** - coral band, heading, office line + phone from Site-Wide Settings, navy button. Goes last: the footer curve rises into it.
 
@@ -97,7 +99,10 @@ disclosure, tracking IDs and raw script slots (CookieYes goes in Head).
   versions (BAFE's carries the registration ID, LPCB wants the certificate
   number alongside) should replace them once HESIS supplies them from the
   member portals.
-- LinkedIn feed approach and the company page URL; social URLs for the footer.
+- LinkedIn: the `cbp-linkedin-feed` plugin is installed and the block reads
+  from it. It goes live once Chillibyte's LinkedIn app is approved for the
+  Community Management API and a HESIS Page Super Admin clicks Connect
+  (Settings > LinkedIn Feed). Company page URL and social URLs for the footer.
 - Office addresses, legal entity details, Client Portal URL, cookie consent script.
 - Real case study copy; the three entries carry the design's titles and photos only.
 
