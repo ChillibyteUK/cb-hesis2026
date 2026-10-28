@@ -100,8 +100,18 @@
 	}
 }
 
+/* Slides stretch to the tallest in the row (flex default), but a card's own
+   height: 100% resolves against the slide's auto height and so does nothing.
+   Making the slide a flex container lets the card stretch to fill it, so every
+   card in a row ends at the same baseline. */
 .swiper-slide {
+	display: flex;
 	height: auto;
+
+	& > * {
+		width: 100%;
+		height: auto;
+	}
 }
 
 /* Scroll fade-up (src/js/fade-in.js). Starts hidden only once JS has had a
