@@ -1198,6 +1198,13 @@ body.has-hero #masthead:not(.scrolled) {
 	margin: 0;
 }
 
+/* The footer's navy curve rises ~7vw over whatever sits above it. The CB CTA
+   band is designed to take that (its bottom padding allows for it); any other
+   last block needs the room added here, or its final lines disappear under
+   the curve. */
+main:not(:has(> .cta:last-child)) {
+	padding-bottom: clamp(40px, 7vw, 110px);
+}
 /* Form base + buttons. */
 
 input,
