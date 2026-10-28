@@ -1,31 +1,40 @@
 /* =========================
    CB CASE STUDIES
    ========================= */
-/* Padding gives the card's lifted circle and shadow room inside the clip.
+/* A little padding so the card's shadow is not clipped by Swiper's overflow.
    Two classes on purpose: Swiper's own stylesheet loads after this one and
    sets .swiper { padding: 0 }, which beats a single-class rule. */
 .swiper.case-studies__swiper {
 	margin-inline: -0.5rem;
-	padding: 1.25rem 0.5rem 1rem;
+	padding: 0.5rem 0.5rem 1rem;
 }
 
 .case-studies__cta {
 	margin: 2rem 0 0;
 }
 
+/* The design floats the photo circle, as wide as the card, with its centre a
+   touch below the card's top edge (about 41% of it rising above the grey).
+   The circle and the grey panel are both inside the card's own box: the card
+   is transparent, the panel is the body, and the circle overlaps into it with
+   a negative bottom margin. Nothing sticks out of the slide, so neither
+   Swiper's overflow: hidden nor any section clip can cut the circle. The
+   percentages resolve against the card's width, which keeps the overlap in
+   proportion with the circle at every size. */
 .case-study-card {
+	--circle-overlap: 59%;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	border-radius: var(--radius-lg);
-	background: var(--col-grey-50);
 	transition: transform 250ms ease;
 }
 
 .case-study-card__media {
-	width: 86%;
+	position: relative;
+	z-index: 1;
+	width: 100%;
 	aspect-ratio: 1;
-	margin: -1rem auto 0;
+	margin: 0 0 calc(-1 * var(--circle-overlap));
 	border-radius: 50%;
 	overflow: hidden;
 	background: var(--col-grey-300);
@@ -48,7 +57,9 @@
 	flex-direction: column;
 	flex: 1;
 	gap: 0.6rem;
-	padding: 1.5rem 1.5rem 1.6rem;
+	padding: calc(var(--circle-overlap) + 2rem) 2rem 2rem;
+	border-radius: var(--radius-lg);
+	background: var(--col-grey-50);
 }
 
 .case-study-card__body .kicker {
