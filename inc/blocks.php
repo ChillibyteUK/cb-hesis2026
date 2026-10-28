@@ -226,7 +226,8 @@ add_filter( 'allowed_block_types_all', 'cb_hesis2026_disallow_unwanted_core_bloc
 /**
  * Render callback that wraps a core block's content in .container.
  *
- * Skipped on single blog posts: single.php is expected to nest its content
+ * Skipped on single blog posts only (is_singular( 'post' ), not is_single(),
+ * which is also true for every custom post type): single.php nests its content
  * inside its own .container, so per-block wrappers would double up there.
  *
  * @param array  $attributes Block attributes — unused, required by the render_callback signature.
@@ -234,7 +235,7 @@ add_filter( 'allowed_block_types_all', 'cb_hesis2026_disallow_unwanted_core_bloc
  * @return string
  */
 function cb_hesis2026_wrap_block_in_container( $attributes, $content ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
-	if ( is_single() ) {
+	if ( is_singular( 'post' ) ) {
 		return $content;
 	}
 
