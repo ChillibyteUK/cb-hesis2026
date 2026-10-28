@@ -103,8 +103,12 @@
 /* Slides stretch to the tallest in the row (flex default), but a card's own
    height: 100% resolves against the slide's auto height and so does nothing.
    Making the slide a flex container lets the card stretch to fill it, so every
-   card in a row ends at the same baseline. */
-.swiper-slide {
+   card in a row ends at the same baseline.
+
+   .swiper .swiper-slide rather than .swiper-slide: Swiper's own stylesheet is
+   enqueued at print time, after theme.min.css, and sets display: block at
+   single-class specificity, so a single-class rule here loses to it. */
+.swiper .swiper-slide {
 	display: flex;
 	height: auto;
 

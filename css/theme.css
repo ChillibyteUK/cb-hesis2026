@@ -863,6 +863,14 @@ body.has-hero #masthead:not(.scrolled) {
 	}
 }
 
+/* Below 600px WordPress makes the admin bar position: absolute, so it scrolls
+   away with the page; keep the fixed header under it only until the page has
+   scrolled, otherwise a 46px gap opens above the header for logged-in users. */
+@media (max-width: 600px) {
+	body.admin-bar #masthead.scrolled {
+		top: 0;
+	}
+}
 /* Navy footer with a concave curve rising into the band above it. */
 
 .site-footer {
@@ -1129,12 +1137,16 @@ body.has-hero #masthead:not(.scrolled) {
 /* Slides stretch to the tallest in the row (flex default), but a card's own
    height: 100% resolves against the slide's auto height and so does nothing.
    Making the slide a flex container lets the card stretch to fill it, so every
-   card in a row ends at the same baseline. */
-.swiper-slide {
+   card in a row ends at the same baseline.
+
+   .swiper .swiper-slide rather than .swiper-slide: Swiper's own stylesheet is
+   enqueued at print time, after theme.min.css, and sets display: block at
+   single-class specificity, so a single-class rule here loses to it. */
+.swiper .swiper-slide {
 	display: flex;
 	height: auto;
 }
-.swiper-slide > * {
+:is(.swiper .swiper-slide) > * {
 		width: 100%;
 		height: auto;
 	}

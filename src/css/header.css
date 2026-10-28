@@ -147,3 +147,12 @@ body.has-hero #masthead:not(.scrolled) {
 		border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 	}
 }
+
+/* Below 600px WordPress makes the admin bar position: absolute, so it scrolls
+   away with the page; keep the fixed header under it only until the page has
+   scrolled, otherwise a 46px gap opens above the header for logged-in users. */
+@media (max-width: 600px) {
+	body.admin-bar #masthead.scrolled {
+		top: 0;
+	}
+}
