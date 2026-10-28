@@ -89,10 +89,12 @@ disclosure, tracking IDs and raw script slots (CookieYes goes in Head).
 
 ## Still needed from the client
 
-- The remaining accreditation logos: the design carries five (LIFT CERT/UKAS,
-  CHAS, ISO 9001, SafeContractor, ISO 45001); the content doc lists sixteen.
-- The About block's third small circle (CCTV photo, `about-third.jpg` in the
-  seed folder) has no slot yet - add a field if the design is to be matched exactly.
+- Accreditation marks still missing: LPCB (BRE only publishes an 86px sample;
+  licensees get artwork from marketing@bregroup.com), NSI Gold and NICEIC
+  Approved Contractor (both issued through the member portals). FIA, BAFE, Gas
+  Safe, dhf and REFCOM are currently the bodies' corporate logos from their
+  public sites; the member/registered-organisation versions (BAFE's carries the
+  registration ID) should replace them once HESIS supplies them.
 - LinkedIn feed approach and the company page URL; social URLs for the footer.
 - Office addresses, legal entity details, Client Portal URL, cookie consent script.
 - Real case study copy; the three entries carry the design's titles and photos only.
