@@ -730,18 +730,18 @@ strong {
 	height: auto;
 }
 
-.logo__mark {
+.logo__mark--a {
 	fill: var(--col-orange);
+}
+
+.logo__mark--b {
+	fill: var(--col-coral);
 }
 
 .logo__text,
 .logo__sub {
 	fill: var(--col-navy);
 	transition: fill 400ms ease;
-}
-
-.logo__sub {
-	opacity: 0.85;
 }
 
 .logo--mark-only .logo__text,
@@ -815,7 +815,11 @@ body.has-hero #masthead:not(.scrolled) {
 	box-shadow: none;
 }
 
-:is(body.has-hero #masthead:not(.scrolled)) .logo__text,:is(body.has-hero #masthead:not(.scrolled)) .logo__sub {
+:is(body.has-hero #masthead:not(.scrolled)) .logo__text {
+		fill: #e6d1ba;
+	}
+
+:is(body.has-hero #masthead:not(.scrolled)) .logo__sub {
 		fill: var(--col-white);
 	}
 
@@ -901,7 +905,7 @@ body.has-hero #masthead:not(.scrolled) {
 		width: 9rem;
 	}
 
-.site-footer__logo .logo__text,.site-footer__logo .logo__sub {
+.site-footer__logo .logo__mark--a,.site-footer__logo .logo__mark--b,.site-footer__logo .logo__text,.site-footer__logo .logo__sub {
 		fill: var(--col-white);
 	}
 
@@ -3096,19 +3100,28 @@ article h2[id] {
 	transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
+/* The design's icons carry their own coral disc (img/icons/icon-*.svg, drawn
+   in currentColor). An uploaded image, or one of the generic line icons, gets
+   a disc from the container instead. */
 .service-tile__icon {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 4.5rem;
-	height: 4.5rem;
+	width: 5.25rem;
+	height: 5.25rem;
 	border-radius: 50%;
-	background: var(--col-coral);
-	color: var(--col-white);
-	transition: background 250ms ease;
+	color: var(--col-coral);
+	transition: color 250ms ease, background 250ms ease;
 }
-
-.service-tile__icon svg,.service-tile__icon img {
+.service-tile__icon svg {
+		width: 100%;
+		height: 100%;
+	}
+.service-tile__icon:has(img),.service-tile__icon:has(svg[stroke]) {
+		background: var(--col-coral);
+		color: var(--col-white);
+	}
+.service-tile__icon:has(img) img,.service-tile__icon:has(svg[stroke]) svg {
 		width: 50%;
 		height: 50%;
 		object-fit: contain;
@@ -3128,7 +3141,12 @@ a.service-tile:focus-visible {
 }
 
 :is(a.service-tile:hover,a.service-tile:focus-visible) .service-tile__icon {
+		color: var(--col-orange);
+	}
+
+:is(a.service-tile:hover,a.service-tile:focus-visible) .service-tile__icon:has(img),:is(a.service-tile:hover,a.service-tile:focus-visible) .service-tile__icon:has(svg[stroke]) {
 		background: var(--col-orange);
+		color: var(--col-white);
 	}
 
 /* --- src/blocks/cb-stats.css --- */

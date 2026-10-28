@@ -706,19 +706,32 @@
 	transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
+/* The design's icons carry their own coral disc (img/icons/icon-*.svg, drawn
+   in currentColor). An uploaded image, or one of the generic line icons, gets
+   a disc from the container instead. */
 .service-tile__icon {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 4.5rem;
-	height: 4.5rem;
+	width: 5.25rem;
+	height: 5.25rem;
 	border-radius: 50%;
-	background: var(--col-coral);
-	color: var(--col-white);
-	transition: background 250ms ease;
+	color: var(--col-coral);
+	transition: color 250ms ease, background 250ms ease;
 
-	& svg,
-	& img {
+	& svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	&:has(img),
+	&:has(svg[stroke]) {
+		background: var(--col-coral);
+		color: var(--col-white);
+	}
+
+	&:has(img) img,
+	&:has(svg[stroke]) svg {
 		width: 50%;
 		height: 50%;
 		object-fit: contain;
@@ -738,7 +751,13 @@ a.service-tile:focus-visible {
 	box-shadow: var(--shadow-lg);
 
 	& .service-tile__icon {
+		color: var(--col-orange);
+	}
+
+	& .service-tile__icon:has(img),
+	& .service-tile__icon:has(svg[stroke]) {
 		background: var(--col-orange);
+		color: var(--col-white);
 	}
 }
 

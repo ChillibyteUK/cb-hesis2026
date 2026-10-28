@@ -39,6 +39,8 @@
 		width: 9rem;
 	}
 
+	& .logo__mark--a,
+	& .logo__mark--b,
 	& .logo__text,
 	& .logo__sub {
 		fill: var(--col-white);

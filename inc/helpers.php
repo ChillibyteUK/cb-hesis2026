@@ -34,19 +34,29 @@ function cb_hesis2026_content_excerpt( $post = null, $length = 30 ) {
 }
 
 /**
- * Inline HESIS logo.
+ * Inline HESIS logo, from img/logo.svg (vectors lifted from the design file).
  *
- * PLACEHOLDER drawn from the design JPG until the brand supplies vector
- * artwork. Colours come from CSS (.logo__mark, .logo__text) so the same
- * markup works over the dark hero, on the white scrolled header and in the
- * footer.
+ * Colours come from CSS: .logo__mark--a / --b are the orange and coral bars,
+ * .logo__text the wordmark, .logo__sub the "An andwis. group company" line.
+ * The header flips them between cream-on-dark and navy-on-white; the footer
+ * sets everything white.
  *
  * @param string $class Extra class on the root <svg>.
  * @return string
  */
 function cb_hesis2026_logo_svg( $class = '' ) {
-	$class = trim( 'logo ' . $class );
-	return '<svg class="' . esc_attr( $class ) . '" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 72" role="img" aria-label="HESIS"><g class="logo__mark"><path d="M4 70V26l22-12v56z"/><path d="M28 70V22l16 9v39z"/><path d="M14 12 26 0v8L14 18z"/></g><text class="logo__text" x="54" y="46" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="34" letter-spacing="1">HESIS</text><text class="logo__sub" x="55" y="64" font-family="Poppins, Arial, sans-serif" font-weight="500" font-size="9" letter-spacing="0.5">an andwis. group company</text></svg>';
+	static $svg = null;
+
+	if ( null === $svg ) {
+		$path = get_template_directory() . '/img/logo.svg';
+		$svg  = file_exists( $path ) ? file_get_contents( $path ) : ''; // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+	}
+
+	if ( ! $svg ) {
+		return '';
+	}
+
+	return preg_replace( '/^<svg /', '<svg class="' . esc_attr( trim( 'logo ' . $class ) ) . '" ', $svg, 1 );
 }
 
 /**

@@ -13,18 +13,18 @@
 	height: auto;
 }
 
-.logo__mark {
+.logo__mark--a {
 	fill: var(--col-orange);
+}
+
+.logo__mark--b {
+	fill: var(--col-coral);
 }
 
 .logo__text,
 .logo__sub {
 	fill: var(--col-navy);
 	transition: fill 400ms ease;
-}
-
-.logo__sub {
-	opacity: 0.85;
 }
 
 .logo--mark-only .logo__text,
@@ -98,7 +98,10 @@ body.has-hero #masthead:not(.scrolled) {
 	border-bottom-color: transparent;
 	box-shadow: none;
 
-	& .logo__text,
+	& .logo__text {
+		fill: #e6d1ba;
+	}
+
 	& .logo__sub {
 		fill: var(--col-white);
 	}

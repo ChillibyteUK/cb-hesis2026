@@ -1,9 +1,10 @@
 # HESIS Design Breakdown
 
-Built from the homepage design JPG (October 2026) and "Homepage content - V2.docx"
-on `cb-js-skeleton2026` (native blocks, no ACF). The JPG was the only design asset
-available at build time; a layered design file has been requested and the tokens
-below should be checked against it.
+Built from "Hesis HP Layout [BUILD for MATT PDFcomp].ai" (the PDF-compatible
+Illustrator file, October 2026) and "Homepage content - V2.docx" on
+`cb-js-skeleton2026` (native blocks, no ACF). Logo, tile icons, photography and
+the five accreditation badges were lifted straight from that file; colours and
+Poppins weights were read from its vectors and fonts.
 
 Read `CLAUDE.md` first - it is the skeleton's own rulebook (no Sass, no Bootstrap,
 Grid-based `.row`/`.col-*`, `.grid` for card layouts, tokens in `src/css/tokens.css`).
@@ -29,8 +30,12 @@ This file only adds what is specific to HESIS.
   and only enqueued when a block has added an init with
   `wp_add_inline_script( 'swiper', ... )`. Fade-ups and the logo marquee use the
   vendored GSAP (smooth-scroll module).
-- Icons are inline SVG from `img/icons/` via `get_icon()`. Service tiles take an
-  icon slug, or an uploaded image to override it.
+- Icons are inline SVG from `img/icons/` via `get_icon()`. The ten `icon-*.svg`
+  files are the design's own tile icons (coral disc included, drawn in
+  `currentColor`); the plain-named ones are generic line icons that get a disc
+  from CSS. Service tiles take an icon slug, or an uploaded image to override it.
+- `img/logo.svg` is the brand logo as vectors from the design file, with the
+  tagline outlined. `cb_hesis2026_logo_svg()` inlines it with colour classes.
 - The "We are an andwis group company" section is the shared `[andwis_block]`
   shortcode from the `cbp-andwisco` plugin, dropped in as a core Shortcode block;
   only its CTA colour is overridden (`src/css/forms.css`).
@@ -40,7 +45,7 @@ This file only adds what is specific to HESIS.
 ## Tokens
 
 `src/css/tokens.css` is the source of truth; `theme.json` is generated from it.
-Colours sampled from the JPG:
+Colours read from the design file's vector fills:
 
 | Token | Value | Used for |
 | --- | --- | --- |
@@ -82,15 +87,16 @@ Font: Poppins, self-hosted in `fonts/` (400-800), declared in `src/css/typograph
 footer tagline, offices repeater (footer Contact column), social URLs, legal
 disclosure, tracking IDs and raw script slots (CookieYes goes in Head).
 
-## Still needed from the client / design
+## Still needed from the client
 
-- Brand logo as SVG (`cb_hesis2026_logo_svg()` is a placeholder drawn from the JPG).
-- Photography: hero, about (two circles), sectors background, case study images. All current images are generated placeholders.
-- Accreditation logos (the sixteen in the content doc). Placeholder badges are in the media library.
-- Confirmed brand colours and font from the design file.
+- The remaining accreditation logos: the design carries five (LIFT CERT/UKAS,
+  CHAS, ISO 9001, SafeContractor, ISO 45001); the content doc lists sixteen.
+- The About block's third small circle (CCTV photo, `about-third.jpg` in the
+  seed folder) has no slot yet - add a field if the design is to be matched exactly.
 - LinkedIn feed approach and the company page URL; social URLs for the footer.
 - Office addresses, legal entity details, Client Portal URL, cookie consent script.
-- Real case study content; the four entries are placeholders named from the design.
+- Real case study copy; the three entries carry the design's titles and photos only.
+- Footer tagline year: the design says "since 1990", the content doc "since 2007".
 
 ## Seeding
 
