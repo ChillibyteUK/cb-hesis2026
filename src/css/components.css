@@ -33,7 +33,7 @@
 	}
 }
 
-/* Swiper controls: outlined circles with a chevron, and dot pagination. */
+/* Swiper controls: outlined circles with a chevron. Arrows only, no dots. */
 .carousel-controls {
 	display: flex;
 	align-items: center;
@@ -86,25 +86,6 @@
 	}
 }
 
-.carousel-pagination {
-	display: flex;
-	gap: 0.5rem;
-
-	& .swiper-pagination-bullet {
-		width: 0.6rem;
-		height: 0.6rem;
-		margin: 0;
-		border-radius: 50%;
-		background: var(--col-grey-300);
-		opacity: 1;
-		transition: background var(--transition), transform var(--transition);
-	}
-
-	& .swiper-pagination-bullet-active {
-		background: var(--col-orange);
-		transform: scale(1.15);
-	}
-}
 
 /* Slides stretch to the tallest in the row (flex default), but a card's own
    height: 100% resolves against the slide's auto height and so does nothing.

@@ -115,8 +115,10 @@
 /* =========================
    CB CASE STUDIES
    ========================= */
-.case-studies__swiper {
-	/* Padding gives the card's lifted circle and shadow room inside the clip. */
+/* Padding gives the card's lifted circle and shadow room inside the clip.
+   Two classes on purpose: Swiper's own stylesheet loads after this one and
+   sets .swiper { padding: 0 }, which beats a single-class rule. */
+.swiper.case-studies__swiper {
 	margin-inline: -0.5rem;
 	padding: 1.25rem 0.5rem 1rem;
 }

@@ -1072,7 +1072,7 @@ body.has-hero #masthead:not(.scrolled) {
 		pointer-events: none;
 	}
 
-/* Swiper controls: outlined circles with a chevron, and dot pagination. */
+/* Swiper controls: outlined circles with a chevron. Arrows only, no dots. */
 .carousel-controls {
 	display: flex;
 	align-items: center;
@@ -1123,25 +1123,6 @@ body.has-hero #masthead:not(.scrolled) {
 		color: var(--col-orange);
 	}
 
-.carousel-pagination {
-	display: flex;
-	gap: 0.5rem;
-}
-
-.carousel-pagination .swiper-pagination-bullet {
-		width: 0.6rem;
-		height: 0.6rem;
-		margin: 0;
-		border-radius: 50%;
-		background: var(--col-grey-300);
-		opacity: 1;
-		transition: background var(--transition), transform var(--transition);
-	}
-
-.carousel-pagination .swiper-pagination-bullet-active {
-		background: var(--col-orange);
-		transform: scale(1.15);
-	}
 
 /* Slides stretch to the tallest in the row (flex default), but a card's own
    height: 100% resolves against the slide's auto height and so does nothing.
@@ -2554,8 +2535,10 @@ article h2[id] {
 /* =========================
    CB CASE STUDIES
    ========================= */
-.case-studies__swiper {
-	/* Padding gives the card's lifted circle and shadow room inside the clip. */
+/* Padding gives the card's lifted circle and shadow room inside the clip.
+   Two classes on purpose: Swiper's own stylesheet loads after this one and
+   sets .swiper { padding: 0 }, which beats a single-class rule. */
+.swiper.case-studies__swiper {
 	margin-inline: -0.5rem;
 	padding: 1.25rem 0.5rem 1rem;
 }

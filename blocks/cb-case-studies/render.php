@@ -68,7 +68,6 @@ $wrapper_attributes = get_block_wrapper_attributes( array( 'class' => 'case-stud
 		</div>
 		<div class="carousel-controls">
 			<button type="button" class="carousel-btn" id="<?php echo esc_attr( $slider_id ); ?>-prev" aria-label="<?php esc_attr_e( 'Previous case studies', 'cb-hesis2026' ); ?>"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-			<div class="carousel-pagination" id="<?php echo esc_attr( $slider_id ); ?>-dots"></div>
 			<button type="button" class="carousel-btn" id="<?php echo esc_attr( $slider_id ); ?>-next" aria-label="<?php esc_attr_e( 'Next case studies', 'cb-hesis2026' ); ?>"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 		</div>
 		<?php
@@ -90,7 +89,6 @@ wp_add_inline_script(
 		watchOverflow: true,
 		breakpoints: { 576: { slidesPerView: 1.5, spaceBetween: 20 }, 768: { slidesPerView: 2, spaceBetween: 24 }, 992: { slidesPerView: 3, spaceBetween: 24 } },
 		navigation: { prevEl: "#' . esc_js( $slider_id ) . '-prev", nextEl: "#' . esc_js( $slider_id ) . '-next" },
-		pagination: { el: "#' . esc_js( $slider_id ) . '-dots", clickable: true },
 		a11y: { enabled: true }
 	});'
 );
