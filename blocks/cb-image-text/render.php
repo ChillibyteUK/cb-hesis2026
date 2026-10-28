@@ -2,8 +2,9 @@
 /**
  * Block template for CB Image Text.
  *
- * Copy on one side, a circular photo on the other with an optional second
- * circle and a rotating ring of orange dots. Used for the About teaser.
+ * Copy on one side, a circular photo on the other with up to two smaller
+ * overlapping circles and a rotating ring of orange dots. Used for the About
+ * teaser.
  *
  * @package cb-hesis2026
  */
@@ -15,6 +16,7 @@ $heading      = $attributes['heading'] ?? '';
 $body         = $attributes['body'] ?? '';
 $image_id     = absint( $attributes['mainImageId'] ?? 0 );
 $secondary_id = absint( $attributes['secondaryImageId'] ?? 0 );
+$third_id     = absint( $attributes['thirdImageId'] ?? 0 );
 $position     = 'Left' === ( $attributes['imagePosition'] ?? 'Right' ) ? 'left' : 'right';
 $dot_ring     = ! empty( $attributes['dotRing'] );
 
@@ -63,6 +65,13 @@ $wrapper_attributes = get_block_wrapper_attributes( array( 'class' => 'image-tex
 						?>
 					<div class="image-text__circle image-text__circle--small">
 						<?php echo wp_get_attachment_image( $secondary_id, 'medium', false, array( 'loading' => 'lazy' ) ); ?>
+					</div>
+						<?php
+					}
+					if ( $third_id ) {
+						?>
+					<div class="image-text__circle image-text__circle--third">
+						<?php echo wp_get_attachment_image( $third_id, 'medium', false, array( 'loading' => 'lazy' ) ); ?>
 					</div>
 						<?php
 					}

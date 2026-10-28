@@ -365,10 +365,21 @@
 
 .image-text__circle--small {
 	right: auto;
-	left: 0;
-	top: 36%;
+	left: 4%;
+	top: 34%;
 	z-index: 0;
 	width: 36%;
+}
+
+/* Third circle: smaller, tucked under the main one's lower left, in front of
+   the second so the three read as a cluster like the design. */
+.image-text__circle--third {
+	right: auto;
+	left: 10%;
+	top: 68%;
+	z-index: 2;
+	width: 24%;
+	box-shadow: var(--shadow-sm);
 }
 
 /* Ring of orange dots behind the main circle. */

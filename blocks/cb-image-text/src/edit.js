@@ -4,7 +4,7 @@ import { TextControl, RadioControl, ToggleControl, Button } from '@wordpress/com
 import EditorBlockShell from '../../_shared/EditorBlockShell';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
-	const { kicker, heading, body, ctaText, ctaUrl, ctaTarget, mainImageId, mainImageUrl, mainImageAlt, secondaryImageId, secondaryImageUrl, secondaryImageAlt, imagePosition, dotRing } = attributes;
+	const { kicker, heading, body, ctaText, ctaUrl, ctaTarget, mainImageId, mainImageUrl, mainImageAlt, secondaryImageId, secondaryImageUrl, secondaryImageAlt, thirdImageId, thirdImageUrl, thirdImageAlt, imagePosition, dotRing } = attributes;
 	const blockProps = useBlockProps( { className: 'container cb-hesis2026-editor-block' } );
 
 	return (
@@ -47,7 +47,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				onChange={ ( value ) => setAttributes( { ctaTarget: value } ) }
 			/>
 			<div style={ { display: 'flex', flexWrap: 'wrap', gap: '12px' } }>
-				<div style={ { flex: '50 1 0%' } }>
+				<div style={ { flex: '33 1 0%' } }>
 			<div className="cb-hesis2026-editor-field">
 				<label className="cb-hesis2026-editor-field__label">{ __( 'Main Image', 'cb-hesis2026' ) }</label>
 				<MediaUploadCheck>
@@ -80,7 +80,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				<p className="cb-hesis2026-editor-field__help">{ __( 'Cropped to a circle.', 'cb-hesis2026' ) }</p>
 			</div>
 				</div>
-				<div style={ { flex: '50 1 0%' } }>
+				<div style={ { flex: '33 1 0%' } }>
 			<div className="cb-hesis2026-editor-field">
 				<label className="cb-hesis2026-editor-field__label">{ __( 'Secondary Image', 'cb-hesis2026' ) }</label>
 				<MediaUploadCheck>
@@ -113,8 +113,39 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				<p className="cb-hesis2026-editor-field__help">{ __( 'Optional smaller circle overlapping the main image.', 'cb-hesis2026' ) }</p>
 			</div>
 				</div>
+				<div style={ { flex: '33 1 0%' } }>
+			<div className="cb-hesis2026-editor-field">
+				<label className="cb-hesis2026-editor-field__label">{ __( 'Third Image', 'cb-hesis2026' ) }</label>
+				<MediaUploadCheck>
+					<MediaUpload
+						onSelect={ ( media ) =>
+							setAttributes( {
+								thirdImageId: media.id,
+								thirdImageUrl: media.url,
+								thirdImageAlt: media.alt || '',
+							} )
+						}
+						allowedTypes={ [ 'image' ] }
+						value={ thirdImageId }
+						render={ ( { open } ) => (
+							<div className="cb-hesis2026-editor-field__control">
+								{ thirdImageUrl && (
+									<img
+										src={ thirdImageUrl }
+										alt={ thirdImageAlt }
+										style={ { maxWidth: '200px', display: 'block', marginBottom: '8px' } }
+									/>
+								) }
+								<Button variant="secondary" onClick={ open }>
+									{ thirdImageUrl ? __( 'Replace Third Image', 'cb-hesis2026' ) : __( 'Select Third Image', 'cb-hesis2026' ) }
+								</Button>
+							</div>
+						) }
+					/>
+				</MediaUploadCheck>
+				<p className="cb-hesis2026-editor-field__help">{ __( 'Optional third, smaller circle at the lower left of the main image.', 'cb-hesis2026' ) }</p>
 			</div>
-			<div style={ { display: 'flex', flexWrap: 'wrap', gap: '12px' } }>
+				</div>
 				<div style={ { flex: '50 1 0%' } }>
 			<RadioControl
 				label={ __( 'Image Position', 'cb-hesis2026' ) }
@@ -126,6 +157,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				onChange={ ( value ) => setAttributes( { imagePosition: value } ) }
 			/>
 				</div>
+			</div>
+			<div style={ { display: 'flex', flexWrap: 'wrap', gap: '12px' } }>
 				<div style={ { flex: '50 1 0%' } }>
 			<ToggleControl
 				label={ __( 'Dot Ring', 'cb-hesis2026' ) }

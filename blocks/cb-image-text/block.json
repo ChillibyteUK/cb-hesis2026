@@ -54,13 +54,25 @@
 			"type": "string",
 			"default": ""
 		},
+		"thirdImageId": {
+			"type": "number",
+			"default": 0
+		},
+		"thirdImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"thirdImageAlt": {
+			"type": "string",
+			"default": ""
+		},
 		"imagePosition": {
 			"type": "string",
 			"default": "Right"
 		},
 		"dotRing": {
 			"type": "boolean",
-			"default": true
+			"default": false
 		}
 	},
 	"supports": {
