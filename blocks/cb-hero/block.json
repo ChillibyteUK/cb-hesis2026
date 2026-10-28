@@ -1,0 +1,76 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cb-hesis2026/cb-hero",
+	"title": "CB Hero",
+	"category": "cb-hesis2026",
+	"icon": "cover-image",
+	"attributes": {
+		"kicker": {
+			"type": "string",
+			"default": ""
+		},
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"intro": {
+			"type": "string",
+			"default": ""
+		},
+		"primaryCtaText": {
+			"type": "string",
+			"default": ""
+		},
+		"primaryCtaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"primaryCtaTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"secondaryCtaText": {
+			"type": "string",
+			"default": ""
+		},
+		"secondaryCtaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"secondaryCtaTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"backgroundImageId": {
+			"type": "number",
+			"default": 0
+		},
+		"backgroundImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"backgroundImageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"backgroundImageFocalPoint": {
+			"type": "object",
+			"default": {
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"bottomCurve": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"className": true,
+		"align": true
+	},
+	"editorScript": "file:./build/index.js",
+	"render": "file:./render.php"
+}

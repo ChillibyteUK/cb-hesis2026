@@ -1,0 +1,96 @@
+/* =========================
+   CB LINKEDIN
+   ========================= */
+.linkedin {
+	background: var(--col-grey-100);
+}
+
+.linkedin__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 2rem;
+
+	& .kicker {
+		margin: 0;
+	}
+}
+
+.linkedin-card {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	height: 100%;
+	padding: 1.5rem;
+	border: 1px solid rgb(31 36 65 / 0.12);
+	border-radius: var(--radius-lg);
+	background: var(--col-white);
+}
+
+.linkedin-card__head {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.linkedin-card__avatar {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 auto;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	background: var(--col-navy);
+	overflow: hidden;
+
+	& .logo {
+		width: 1.6rem;
+	}
+}
+
+.linkedin-card__author {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.3;
+
+	& strong {
+		color: var(--col-ink);
+		font-size: var(--fs-body-sm);
+	}
+
+	& small {
+		color: var(--col-muted);
+		font-size: var(--fs-caption);
+	}
+}
+
+.linkedin-card__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.6rem;
+	height: 1.6rem;
+	margin-left: auto;
+	border-radius: 0.3rem;
+	background: #0a66c2;
+	color: var(--col-white);
+
+	& svg {
+		width: 0.9rem;
+		height: 0.9rem;
+	}
+
+	&:hover,
+	&:focus-visible {
+		background: var(--col-navy);
+		color: var(--col-white);
+	}
+}
+
+.linkedin-card__text {
+	margin: 0;
+	font-size: var(--fs-body-sm);
+	line-height: 1.6;
+}

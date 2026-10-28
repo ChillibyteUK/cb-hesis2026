@@ -1,0 +1,153 @@
+/* Shared pieces used by more than one block. */
+
+.section {
+	padding-block: var(--section-y);
+}
+
+/* Convex curve at the foot of a dark band, drawn in the page background. The
+   element is 120vw wide so the arc stays shallow on wide screens; the band
+   carries overflow-x: clip. */
+.curve-bottom {
+	position: relative;
+	overflow-x: clip;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -1px;
+		left: 50%;
+		z-index: 2;
+		display: block;
+		width: 120vw;
+		height: clamp(40px, 7vw, 110px);
+		background-color: var(--col-body-bg);
+		transform: translateX(-50%);
+		mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 66' preserveAspectRatio='none'><path d='M1440 66C1283.48 26.17 1019.4 0 720 0S156.52 26.17 0 66h1440z'/></svg>") center bottom / 100% 100% no-repeat;
+		pointer-events: none;
+	}
+}
+
+/* Swiper controls: outlined circles with a chevron, and dot pagination. */
+.carousel-controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.25rem;
+	margin-top: var(--space-4);
+}
+
+.carousel-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0;
+	border: 1.5px solid var(--col-grey-300);
+	border-radius: 50%;
+	background: transparent;
+	color: var(--col-navy);
+	cursor: pointer;
+	transition: background var(--transition), border-color var(--transition), color var(--transition), opacity var(--transition);
+
+	& svg {
+		width: 1.1rem;
+		height: 1.1rem;
+	}
+
+	&:hover:not(:disabled),
+	&:focus-visible {
+		background: var(--col-navy);
+		border-color: var(--col-navy);
+		color: var(--col-white);
+	}
+
+	&.swiper-button-disabled {
+		opacity: 0.35;
+		cursor: default;
+	}
+}
+
+.carousel-controls--light .carousel-btn {
+	border-color: rgb(255 255 255 / 0.6);
+	color: var(--col-white);
+
+	&:hover:not(:disabled),
+	&:focus-visible {
+		background: var(--col-white);
+		border-color: var(--col-white);
+		color: var(--col-orange);
+	}
+}
+
+.carousel-pagination {
+	display: flex;
+	gap: 0.5rem;
+
+	& .swiper-pagination-bullet {
+		width: 0.6rem;
+		height: 0.6rem;
+		margin: 0;
+		border-radius: 50%;
+		background: var(--col-grey-300);
+		opacity: 1;
+		transition: background var(--transition), transform var(--transition);
+	}
+
+	& .swiper-pagination-bullet-active {
+		background: var(--col-orange);
+		transform: scale(1.15);
+	}
+}
+
+.swiper-slide {
+	height: auto;
+}
+
+/* Scroll fade-up (src/js/fade-in.js). Starts hidden only once JS has had a
+   chance to run, so a no-JS visitor sees everything. */
+.js .fade-in:not(.is-visible) {
+	opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fade-in {
+		opacity: 1 !important;
+		transform: none !important;
+	}
+}
+
+/* Blog index card. */
+.post-card {
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--radius-lg);
+	background: var(--col-cream);
+	color: inherit;
+	overflow: hidden;
+	transition: transform var(--transition);
+
+	&:hover {
+		color: inherit;
+		transform: translateY(-4px);
+	}
+}
+
+.post-card__media img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.post-card__body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: var(--space-4);
+}
+
+.post-card__title {
+	font-size: var(--fs-h5);
+	margin: 0;
+}

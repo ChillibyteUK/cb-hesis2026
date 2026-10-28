@@ -1,0 +1,119 @@
+{
+	"title": "CB Service Tiles",
+	"color_support": false,
+	"fields": [
+		{
+			"label": "Heading",
+			"type": "text",
+			"help": "",
+			"width": 100,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "heading",
+			"snake": "heading",
+			"sub_fields": [],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_d4ko50v0le",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		},
+		{
+			"label": "Intro",
+			"type": "textarea",
+			"help": "",
+			"width": 100,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "intro",
+			"snake": "intro",
+			"sub_fields": [],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_firy1vbg5r",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		},
+		{
+			"label": "Tiles",
+			"type": "repeater",
+			"help": "Icon Name is an SVG in the theme's img/icons folder (e.g. fire-alarm). Upload an Icon Image to override it.",
+			"width": 100,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "tiles",
+			"snake": "tiles",
+			"sub_fields": [
+				{
+					"label": "Icon Name",
+					"type": "text",
+					"mime_types": "",
+					"link_target": false,
+					"options": "",
+					"name": "iconName",
+					"snake": "icon_name"
+				},
+				{
+					"label": "Icon Image",
+					"type": "image",
+					"mime_types": "",
+					"link_target": false,
+					"options": "",
+					"name": "iconImage",
+					"snake": "icon_image"
+				},
+				{
+					"label": "Title",
+					"type": "text",
+					"mime_types": "",
+					"link_target": false,
+					"options": "",
+					"name": "title",
+					"snake": "title"
+				},
+				{
+					"label": "Link",
+					"type": "link",
+					"mime_types": "",
+					"link_target": false,
+					"options": "",
+					"name": "link",
+					"snake": "link"
+				}
+			],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_9l1b8qfdef",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		},
+		{
+			"label": "CTA",
+			"type": "link",
+			"help": "Text link under the grid, e.g. View all services.",
+			"width": 100,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "cta",
+			"snake": "cta",
+			"sub_fields": [],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_lh0zrxe9yj",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		}
+	]
+}

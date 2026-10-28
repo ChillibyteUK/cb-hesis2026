@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cb-hesis2026/cb-accreditations",
+	"title": "CB Accreditations",
+	"category": "cb-hesis2026",
+	"icon": "cover-image",
+	"attributes": {
+		"label": {
+			"type": "string",
+			"default": "Accredited by"
+		},
+		"logos": {
+			"type": "array",
+			"default": []
+		},
+		"scrollContinuously": {
+			"type": "boolean",
+			"default": true
+		},
+		"bottomCurve": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"className": true,
+		"align": true
+	},
+	"editorScript": "file:./build/index.js",
+	"render": "file:./render.php"
+}

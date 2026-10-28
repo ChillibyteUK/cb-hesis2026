@@ -1,0 +1,192 @@
+{
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        {
+          "name": "white",
+          "slug": "white",
+          "color": "#ffffff",
+          "origin": "theme"
+        },
+        {
+          "name": "black",
+          "slug": "black",
+          "color": "#000000",
+          "origin": "theme"
+        },
+        {
+          "name": "navy",
+          "slug": "navy",
+          "color": "#1f2441",
+          "origin": "theme"
+        },
+        {
+          "name": "navy-deep",
+          "slug": "navy-deep",
+          "color": "#161a30",
+          "origin": "theme"
+        },
+        {
+          "name": "charcoal",
+          "slug": "charcoal",
+          "color": "#1d1d1d",
+          "origin": "theme"
+        },
+        {
+          "name": "orange",
+          "slug": "orange",
+          "color": "#ef7c23",
+          "origin": "theme"
+        },
+        {
+          "name": "orange-dark",
+          "slug": "orange-dark",
+          "color": "#d8690f",
+          "origin": "theme"
+        },
+        {
+          "name": "coral",
+          "slug": "coral",
+          "color": "#e95b3d",
+          "origin": "theme"
+        },
+        {
+          "name": "coral-light",
+          "slug": "coral-light",
+          "color": "#fef4eb",
+          "origin": "theme"
+        },
+        {
+          "name": "cream",
+          "slug": "cream",
+          "color": "#f6efe7",
+          "origin": "theme"
+        },
+        {
+          "name": "grey-100",
+          "slug": "grey-100",
+          "color": "#f0f0f0",
+          "origin": "theme"
+        },
+        {
+          "name": "grey-300",
+          "slug": "grey-300",
+          "color": "#d9d9d9",
+          "origin": "theme"
+        },
+        {
+          "name": "grey-700",
+          "slug": "grey-700",
+          "color": "#4a4f63",
+          "origin": "theme"
+        },
+        {
+          "name": "ink",
+          "slug": "ink",
+          "color": "#1d1d1d",
+          "origin": "theme"
+        },
+        {
+          "name": "muted",
+          "slug": "muted",
+          "color": "#7c8093",
+          "origin": "theme"
+        },
+        {
+          "name": "andwis-green",
+          "slug": "andwis-green",
+          "color": "#00ff99",
+          "origin": "theme"
+        },
+        {
+          "name": "andwis-forest",
+          "slug": "andwis-forest",
+          "color": "#1c4220",
+          "origin": "theme"
+        }
+      ]
+    },
+    "typography": {
+      "fontSizes": [
+        {
+          "name": "base",
+          "slug": "base",
+          "size": "1rem"
+        },
+        {
+          "name": "hero",
+          "slug": "hero",
+          "size": "clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem)"
+        },
+        {
+          "name": "h1",
+          "slug": "h1",
+          "size": "clamp(2rem, 1.4rem + 2.6vw, 3.25rem)"
+        },
+        {
+          "name": "h2",
+          "slug": "h2",
+          "size": "clamp(1.75rem, 1.3rem + 1.9vw, 2.625rem)"
+        },
+        {
+          "name": "h3",
+          "slug": "h3",
+          "size": "clamp(1.375rem, 1.15rem + 1vw, 1.875rem)"
+        },
+        {
+          "name": "h4",
+          "slug": "h4",
+          "size": "1.25rem"
+        },
+        {
+          "name": "h5",
+          "slug": "h5",
+          "size": "1.125rem"
+        },
+        {
+          "name": "h6",
+          "slug": "h6",
+          "size": "1rem"
+        },
+        {
+          "name": "stat",
+          "slug": "stat",
+          "size": "clamp(2.5rem, 1.8rem + 3vw, 4rem)"
+        },
+        {
+          "name": "lede",
+          "slug": "lede",
+          "size": "1.25rem"
+        },
+        {
+          "name": "body-lg",
+          "slug": "body-lg",
+          "size": "1.125rem"
+        },
+        {
+          "name": "body-sm",
+          "slug": "body-sm",
+          "size": "0.9375rem"
+        },
+        {
+          "name": "small",
+          "slug": "small",
+          "size": "0.875rem"
+        },
+        {
+          "name": "caption",
+          "slug": "caption",
+          "size": "0.75rem"
+        },
+        {
+          "name": "micro",
+          "slug": "micro",
+          "size": "0.6875rem"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+/* =========================
+   CB TESTIMONIALS
+   ========================= */
+.testimonials {
+	background: var(--col-orange);
+}
+
+.testimonials__head {
+	margin-bottom: 2rem;
+
+	& .kicker,
+	& h2 {
+		color: var(--col-white);
+	}
+}
+
+.testimonials__foot {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	margin-top: 2rem;
+
+	& .carousel-controls {
+		margin: 0 0 0 auto;
+	}
+}
+
+.testimonial {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	height: 100%;
+	margin: 0;
+	padding: 2rem 2rem 1.75rem 3.25rem;
+	border-radius: var(--radius-lg);
+	background: var(--col-white);
+	color: var(--col-body);
+	box-shadow: var(--shadow-sm);
+}
+
+.testimonial__mark {
+	position: absolute;
+	left: 1.1rem;
+	top: 0.9rem;
+	color: var(--col-orange);
+	font-size: 3rem;
+	font-weight: var(--fw-700);
+	line-height: 1;
+}
+
+.testimonial__quote {
+	margin: 0;
+	line-height: 1.6;
+}
+
+.testimonial__cite {
+	margin-top: auto;
+	color: var(--col-muted);
+	font-size: var(--fs-small);
+
+	& strong {
+		color: var(--col-ink);
+	}
+}

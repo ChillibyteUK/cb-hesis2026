@@ -1,0 +1,98 @@
+/* =========================
+   CB IMAGE TEXT
+   ========================= */
+.image-text {
+	overflow-x: clip;
+}
+
+.image-text__copy {
+	max-width: 34rem;
+
+	& h2 {
+		margin-bottom: 1.25rem;
+	}
+}
+
+.image-text__cta {
+	margin-top: 2rem;
+}
+
+.image-text__media {
+	position: relative;
+	width: min(100%, 30rem);
+	aspect-ratio: 1;
+	margin-inline: auto;
+}
+
+.image-text__circle {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	z-index: 1;
+	width: 72%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	overflow: hidden;
+	transform: translateY(-50%);
+	background: var(--col-grey-100);
+	box-shadow: var(--shadow-lg);
+
+	& img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.image-text__circle--small {
+	right: auto;
+	left: 0;
+	top: 36%;
+	z-index: 0;
+	width: 36%;
+}
+
+/* Ring of orange dots behind the main circle. */
+.image-text__media--dots::before {
+	content: "";
+	position: absolute;
+	right: -7%;
+	top: 50%;
+	z-index: 0;
+	width: 86%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 0.9rem dotted var(--col-orange);
+	transform: translateY(-50%);
+	animation: image-text-spin 60s linear infinite;
+}
+
+@keyframes image-text-spin {
+	to {
+		transform: translateY(-50%) rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.image-text__media--dots::before {
+		animation: none;
+	}
+}
+
+@media (min-width: 992px) {
+	.image-text__media {
+		margin-inline: auto 0;
+	}
+
+	.image-text--image-left .image-text__copy-col {
+		order: 2;
+	}
+
+	.image-text--image-left .image-text__media-col {
+		order: 1;
+	}
+
+	.image-text--image-left .image-text__media {
+		margin-inline: 0 auto;
+	}
+}

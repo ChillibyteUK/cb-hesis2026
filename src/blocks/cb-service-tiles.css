@@ -1,0 +1,62 @@
+/* =========================
+   CB SERVICE TILES
+   ========================= */
+.service-tiles {
+	background: var(--col-grey-100);
+}
+
+.service-tiles__cta {
+	margin: var(--space-5) 0 0;
+}
+
+.service-tile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	height: 100%;
+	padding: 1.75rem 1rem 1.5rem;
+	border-radius: var(--radius-lg);
+	background: var(--col-white);
+	color: var(--col-ink);
+	text-align: center;
+	text-decoration: none;
+	box-shadow: var(--shadow-sm);
+	transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.service-tile__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 4.5rem;
+	height: 4.5rem;
+	border-radius: 50%;
+	background: var(--col-coral);
+	color: var(--col-white);
+	transition: background 250ms ease;
+
+	& svg,
+	& img {
+		width: 50%;
+		height: 50%;
+		object-fit: contain;
+	}
+}
+
+.service-tile__title {
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-600);
+	line-height: 1.25;
+}
+
+a.service-tile:hover,
+a.service-tile:focus-visible {
+	color: var(--col-ink);
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-lg);
+
+	& .service-tile__icon {
+		background: var(--col-orange);
+	}
+}

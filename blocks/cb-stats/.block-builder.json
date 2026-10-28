@@ -1,0 +1,44 @@
+{
+	"title": "CB Stats",
+	"color_support": false,
+	"fields": [
+		{
+			"label": "Stats",
+			"type": "repeater",
+			"help": "",
+			"width": 100,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "stats",
+			"snake": "stats",
+			"sub_fields": [
+				{
+					"label": "Value",
+					"type": "text",
+					"mime_types": "",
+					"link_target": false,
+					"options": "",
+					"name": "value",
+					"snake": "value"
+				},
+				{
+					"label": "Label",
+					"type": "text",
+					"mime_types": "",
+					"link_target": false,
+					"options": "",
+					"name": "label",
+					"snake": "label"
+				}
+			],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_agbg5rqdat",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		}
+	]
+}

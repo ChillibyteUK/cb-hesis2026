@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cb-hesis2026/cb-stats",
+	"title": "CB Stats",
+	"category": "cb-hesis2026",
+	"icon": "cover-image",
+	"attributes": {
+		"stats": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"className": true,
+		"align": true
+	},
+	"editorScript": "file:./build/index.js",
+	"render": "file:./render.php"
+}

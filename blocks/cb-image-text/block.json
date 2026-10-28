@@ -1,0 +1,73 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cb-hesis2026/cb-image-text",
+	"title": "CB Image Text",
+	"category": "cb-hesis2026",
+	"icon": "cover-image",
+	"attributes": {
+		"kicker": {
+			"type": "string",
+			"default": ""
+		},
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"body": {
+			"type": "string",
+			"default": ""
+		},
+		"ctaText": {
+			"type": "string",
+			"default": ""
+		},
+		"ctaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"ctaTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"mainImageId": {
+			"type": "number",
+			"default": 0
+		},
+		"mainImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"mainImageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"secondaryImageId": {
+			"type": "number",
+			"default": 0
+		},
+		"secondaryImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"secondaryImageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"imagePosition": {
+			"type": "string",
+			"default": "Right"
+		},
+		"dotRing": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"className": true,
+		"align": true
+	},
+	"editorScript": "file:./build/index.js",
+	"render": "file:./render.php"
+}

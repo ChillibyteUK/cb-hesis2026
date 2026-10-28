@@ -1,0 +1,209 @@
+/* Poppins - self-hosted in /fonts, preloaded by inc/head-tags.php. */
+@font-face {
+	font-display: swap;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/poppins-400-latin.woff2") format("woff2");
+}
+@font-face {
+	font-display: swap;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 500;
+	src: url("../fonts/poppins-500-latin.woff2") format("woff2");
+}
+@font-face {
+	font-display: swap;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 600;
+	src: url("../fonts/poppins-600-latin.woff2") format("woff2");
+}
+@font-face {
+	font-display: swap;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/poppins-700-latin.woff2") format("woff2");
+}
+@font-face {
+	font-display: swap;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 800;
+	src: url("../fonts/poppins-800-latin.woff2") format("woff2");
+}
+
+body {
+	text-wrap: pretty;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--col-heading);
+	font-weight: var(--fw-600);
+	line-height: var(--line-height-heading);
+	letter-spacing: -0.015em;
+	text-wrap: balance;
+	margin: 0 0 var(--space-3);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+h5 { font-size: var(--fs-h5); }
+h6 { font-size: var(--fs-h6); }
+
+p,
+ul,
+ol {
+	margin-block: 0 var(--space-3);
+}
+
+a {
+	color: var(--col-orange);
+	text-decoration: none;
+	transition: color var(--transition);
+
+	&:hover,
+	&:focus-visible {
+		color: var(--col-orange-dark);
+	}
+}
+
+strong {
+	font-weight: var(--fw-600);
+}
+
+/* Small orange uppercase line above headings. */
+.kicker {
+	display: block;
+	margin: 0 0 0.75rem;
+	color: var(--col-orange);
+	font-size: var(--fs-caption);
+	font-weight: var(--fw-600);
+	letter-spacing: var(--ls-caps);
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.kicker--coral {
+	color: var(--col-coral);
+}
+
+.lede,
+.text-body-l-medium {
+	font-size: var(--fs-lede);
+	font-weight: var(--fw-500);
+	line-height: 1.5;
+}
+
+/* Section intro: heading + optional paragraph. */
+.section-head {
+	margin-bottom: var(--space-5);
+
+	& h2 {
+		margin-bottom: 0.75rem;
+	}
+
+	& p {
+		margin: 0;
+		font-size: var(--fs-body-lg);
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.section-head--center {
+	max-width: 48rem;
+	margin-inline: auto;
+	text-align: center;
+}
+
+.prose {
+	& > :first-child {
+		margin-top: 0;
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+
+	& a {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+}
+
+/* Text link with the trailing diagonal arrow seen throughout the design. */
+.text-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45em;
+	color: var(--col-ink);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-600);
+	text-decoration: none;
+
+	& .arrow {
+		width: 0.9em;
+		height: 0.9em;
+		color: var(--col-coral);
+		transition: transform var(--transition);
+	}
+
+	&:hover,
+	&:focus-visible {
+		color: var(--col-coral);
+
+		& .arrow {
+			transform: translate(2px, -2px);
+		}
+	}
+}
+
+.text-link--light {
+	color: var(--col-white);
+
+	& .arrow {
+		color: var(--col-white);
+	}
+
+	&:hover,
+	&:focus-visible {
+		color: var(--col-white);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+}
+
+/* Dark bands: headings and copy flip to white. */
+.on-dark {
+	color: var(--col-white);
+
+	& h1,
+	& h2,
+	& h3 {
+		color: var(--col-white);
+	}
+
+	& .section-head p {
+		color: rgb(255 255 255 / 0.85);
+	}
+}
+
+.block-note {
+	padding: var(--space-3);
+	border: 1px dashed var(--col-grey-300);
+	color: var(--col-muted);
+	font-size: var(--fs-body-sm);
+}

@@ -1,0 +1,162 @@
+/* =========================
+   CB SECTORS
+   ========================= */
+.sectors {
+	position: relative;
+	padding-block: clamp(4rem, 8vw, 6.5rem);
+	overflow: hidden;
+	background: var(--col-navy-deep);
+}
+
+.sectors__bg,
+.sectors__scrim {
+	position: absolute;
+	inset: 0;
+}
+
+.sectors__bg {
+	z-index: 0;
+
+	& img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.sectors__scrim {
+	z-index: 1;
+	background: rgb(22 26 48 / 0.55);
+}
+
+/* Coral lower half with a convex arc rising into the photo. */
+.sectors__curve {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	z-index: 2;
+	width: 120vw;
+	height: 55%;
+	background: var(--col-coral);
+	transform: translateX(-50%);
+	pointer-events: none;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 100%;
+		height: clamp(50px, 8vw, 120px);
+		background: var(--col-coral);
+		mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 66' preserveAspectRatio='none'><path d='M0 66C156.52 26.17 420.6 0 720 0s563.48 26.17 720 66H0z'/></svg>") center / 100% 100% no-repeat;
+	}
+}
+
+.sectors > .container {
+	position: relative;
+	z-index: 3;
+}
+
+.sectors__head {
+	max-width: 44rem;
+	margin-bottom: 2.5rem;
+}
+
+.sectors__panel {
+	max-width: 56rem;
+	margin-inline: auto;
+	border-radius: var(--radius-lg);
+	background: var(--col-coral-light);
+	box-shadow: var(--shadow-lg);
+	overflow: hidden;
+}
+
+.sectors__item + .sectors__item {
+	border-top: 1px solid rgb(31 36 65 / 0.08);
+}
+
+.sectors__summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1rem 1.5rem;
+	color: var(--col-ink);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-600);
+	letter-spacing: var(--ls-wide);
+	text-transform: uppercase;
+	list-style: none;
+	cursor: pointer;
+	transition: background 200ms ease, color 200ms ease;
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+
+	&:hover {
+		color: var(--col-coral);
+	}
+}
+
+.sectors__item[open] .sectors__summary {
+	background: var(--col-white);
+}
+
+/* Plus that turns into a cross, in a navy circle. */
+.sectors__icon {
+	position: relative;
+	flex: 0 0 auto;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	background: var(--col-navy);
+	transition: transform 300ms ease;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 0.7rem;
+		height: 2px;
+		background: var(--col-white);
+		transform: translate(-50%, -50%);
+	}
+
+	&::after {
+		transform: translate(-50%, -50%) rotate(90deg);
+	}
+}
+
+.sectors__item[open] .sectors__icon {
+	transform: rotate(45deg);
+}
+
+.sectors__body {
+	padding: 0 1.5rem 1.25rem;
+	background: var(--col-white);
+	color: var(--col-body);
+	font-size: var(--fs-body-sm);
+	line-height: 1.6;
+
+	& p {
+		margin: 0;
+	}
+
+	& a {
+		color: var(--col-coral);
+		font-weight: var(--fw-600);
+
+		&:hover,
+		&:focus-visible {
+			text-decoration: underline;
+		}
+	}
+}
+
+.sectors__cta {
+	margin: 2rem 0 0;
+}

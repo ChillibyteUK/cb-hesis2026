@@ -1,0 +1,106 @@
+/* =========================
+   CB ACCREDITATIONS
+   ========================= */
+.accreditations {
+	position: relative;
+	padding-block: 2.5rem clamp(5rem, 10vw, 8.5rem);
+	background: var(--col-charcoal);
+}
+
+.accreditations__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.5rem 3rem;
+}
+
+.accreditations__label {
+	flex: 0 0 auto;
+	margin: 0;
+}
+
+.accreditations__logos {
+	flex: 1 1 20rem;
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.accreditations__track {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+
+	&.is-scrolling {
+		justify-content: flex-start;
+		width: max-content;
+	}
+}
+
+.accreditations__logo {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 auto;
+	min-width: 6rem;
+	padding-inline: 1.5rem;
+
+	& + .accreditations__logo::before {
+		content: "";
+		position: absolute;
+		left: -1rem;
+		top: 50%;
+		width: 1px;
+		height: 2.75rem;
+		background: rgb(255 255 255 / 0.18);
+		transform: translateY(-50%);
+	}
+
+	& img {
+		display: block;
+		width: auto;
+		max-width: 7.5rem;
+		height: 3rem;
+		object-fit: contain;
+		filter: grayscale(1) brightness(1.6);
+		opacity: 0.85;
+		transition: filter 300ms ease, opacity 300ms ease;
+	}
+
+	&:hover img {
+		filter: none;
+		opacity: 1;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.accreditations__inner {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	/* In a column flex container the 20rem flex-basis would become height. */
+	.accreditations__logos {
+		flex: none;
+	}
+
+	.accreditations__track {
+		gap: 1.25rem;
+	}
+
+	.accreditations__logo {
+		min-width: 4.5rem;
+		padding-inline: 1rem;
+
+		& img {
+			height: 2.5rem;
+			max-width: 5.5rem;
+		}
+	}
+}

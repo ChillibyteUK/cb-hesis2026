@@ -1,0 +1,146 @@
+/*
+ * Header on top of the fixed-header module (fixed-header.css): logo colours,
+ * the transparent-over-hero state and the Client Portal pill.
+ *
+ * body.has-hero pages start with a transparent header over the hero
+ * (padding-top on main removed) and flip to white once #masthead gains
+ * .scrolled (src/js/header-scroll.js). Everything else is solid from load.
+ */
+
+.logo {
+	display: block;
+	width: clamp(8rem, 12vw, 10.5rem);
+	height: auto;
+}
+
+.logo__mark {
+	fill: var(--col-orange);
+}
+
+.logo__text,
+.logo__sub {
+	fill: var(--col-navy);
+	transition: fill 400ms ease;
+}
+
+.logo__sub {
+	opacity: 0.85;
+}
+
+.logo--mark-only .logo__text,
+.logo--mark-only .logo__sub {
+	display: none;
+}
+
+#masthead {
+	border-bottom: 1px solid rgb(31 36 65 / 0.08);
+	transition:
+		background-color 400ms ease,
+		border-color 400ms ease,
+		box-shadow 400ms ease;
+}
+
+#masthead.scrolled {
+	background-color: rgb(255 255 255 / 0.96);
+	backdrop-filter: saturate(160%) blur(10px);
+	box-shadow: 0 10px 30px -20px rgb(31 36 65 / 0.25);
+}
+
+.navbar-brand {
+	line-height: 0;
+}
+
+.navbar-nav {
+	gap: 0;
+}
+
+.nav-link {
+	padding: 0.6rem 0;
+	color: var(--col-navy);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-500);
+	transition: color 300ms ease;
+
+	&:hover,
+	&:focus-visible {
+		color: var(--col-orange);
+	}
+}
+
+.navbar-toggler {
+	border: 0;
+	color: var(--col-navy);
+	transition: color 400ms ease;
+}
+
+.nav-cta {
+	margin-top: var(--space-3);
+}
+
+.dropdown-menu {
+	border-radius: var(--radius-lg);
+	border-color: rgb(31 36 65 / 0.08);
+	box-shadow: var(--shadow-lg);
+}
+
+.dropdown-menu .nav-link {
+	padding: 0.4rem 0.75rem;
+	white-space: nowrap;
+}
+
+/* Transparent over the hero, white text, until scrolled. */
+body.has-hero main {
+	padding-top: 0;
+}
+
+body.has-hero #masthead:not(.scrolled) {
+	background-color: transparent;
+	border-bottom-color: transparent;
+	box-shadow: none;
+
+	& .logo__text,
+	& .logo__sub {
+		fill: var(--col-white);
+	}
+
+	& .navbar-toggler {
+		color: var(--col-white);
+	}
+
+	& .navbar-nav > .nav-item > .nav-link {
+		color: var(--col-white);
+
+		&:hover,
+		&:focus-visible {
+			color: var(--col-orange);
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.navbar-nav {
+		gap: 1.75rem;
+	}
+
+	.navbar-collapse {
+		display: flex;
+		align-items: center;
+		gap: 1.75rem;
+	}
+
+	.nav-cta {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 991.98px) {
+	/* The open drawer is white, so its links stay navy even over a hero. */
+	body.has-hero #masthead:not(.scrolled) .navbar-collapse.is-open .nav-link {
+		color: var(--col-navy);
+	}
+
+	.navbar-collapse.is-open {
+		padding: var(--space-3) var(--space-4) var(--space-4);
+		border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+	}
+}

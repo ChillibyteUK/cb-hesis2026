@@ -1,0 +1,110 @@
+{
+	"title": "CB Testimonials",
+	"color_support": false,
+	"fields": [
+		{
+			"label": "Kicker",
+			"type": "text",
+			"help": "",
+			"width": 50,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "kicker",
+			"snake": "kicker",
+			"sub_fields": [],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_jfntw6gteo",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		},
+		{
+			"label": "Heading",
+			"type": "text",
+			"help": "",
+			"width": 50,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "heading",
+			"snake": "heading",
+			"sub_fields": [],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_825gxwpvaj",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		},
+		{
+			"label": "Testimonials",
+			"type": "repeater",
+			"help": "",
+			"width": 100,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "testimonials",
+			"snake": "testimonials",
+			"sub_fields": [
+				{
+					"label": "Quote",
+					"type": "textarea",
+					"mime_types": "",
+					"link_target": false,
+					"options": "",
+					"name": "quote",
+					"snake": "quote"
+				},
+				{
+					"label": "Name",
+					"type": "text",
+					"mime_types": "",
+					"link_target": false,
+					"options": "",
+					"name": "name",
+					"snake": "name"
+				},
+				{
+					"label": "Role",
+					"type": "text",
+					"mime_types": "",
+					"link_target": false,
+					"options": "",
+					"name": "role",
+					"snake": "role"
+				}
+			],
+			"repeater_layout": "column",
+			"post_type_slug": "",
+			"field_key": "field_vdlj5z9fyy",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		},
+		{
+			"label": "CTA",
+			"type": "link",
+			"help": "",
+			"width": 100,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "cta",
+			"snake": "cta",
+			"sub_fields": [],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_ntiiumqoa7",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		}
+	]
+}

@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cb-hesis2026/cb-linkedin",
+	"title": "CB LinkedIn",
+	"category": "cb-hesis2026",
+	"icon": "cover-image",
+	"attributes": {
+		"kicker": {
+			"type": "string",
+			"default": ""
+		},
+		"profileUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"posts": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"className": true,
+		"align": true
+	},
+	"editorScript": "file:./build/index.js",
+	"render": "file:./render.php"
+}
