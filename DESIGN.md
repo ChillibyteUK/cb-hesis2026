@@ -89,12 +89,14 @@ disclosure, tracking IDs and raw script slots (CookieYes goes in Head).
 
 ## Still needed from the client
 
-- Accreditation marks still missing: LPCB (BRE only publishes an 86px sample;
-  licensees get artwork from marketing@bregroup.com), NSI Gold and NICEIC
-  Approved Contractor (both issued through the member portals). FIA, BAFE, Gas
-  Safe, dhf and REFCOM are currently the bodies' corporate logos from their
-  public sites; the member/registered-organisation versions (BAFE's carries the
-  registration ID) should replace them once HESIS supplies them.
+- Accreditation marks: all sixteen from the content doc are in the band. Five
+  came from the design file; the rest were taken from the bodies' own public
+  files (LPCB from BRE's PN103 guidance PDF, NICEIC Approved Contractor from
+  the scheme rules PDF, NSI Gold from nsi.org.uk). FIA, BAFE, Gas Safe, dhf and
+  REFCOM are the bodies' corporate logos; the member/registered-organisation
+  versions (BAFE's carries the registration ID, LPCB wants the certificate
+  number alongside) should replace them once HESIS supplies them from the
+  member portals.
 - LinkedIn feed approach and the company page URL; social URLs for the footer.
 - Office addresses, legal entity details, Client Portal URL, cookie consent script.
 - Real case study copy; the three entries carry the design's titles and photos only.
