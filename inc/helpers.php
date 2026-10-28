@@ -55,7 +55,7 @@ function cb_hesis2026_logo_svg( $class = '' ) {
  * @return string
  */
 function cb_hesis2026_arrow_icon() {
-	return '<svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 4h8v8M12 4 4 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+	return '<svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 4l8 8M12 5v7H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 }
 
 /**

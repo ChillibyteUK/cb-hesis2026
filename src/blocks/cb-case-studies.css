@@ -16,7 +16,7 @@
 	flex-direction: column;
 	height: 100%;
 	border-radius: var(--radius-lg);
-	background: var(--col-cream);
+	background: var(--col-grey-50);
 	transition: transform 250ms ease;
 }
 

@@ -50,7 +50,7 @@
         {
           "name": "coral",
           "slug": "coral",
-          "color": "#e95b3d",
+          "color": "#eb5a3d",
           "origin": "theme"
         },
         {
@@ -63,6 +63,12 @@
           "name": "cream",
           "slug": "cream",
           "color": "#f6efe7",
+          "origin": "theme"
+        },
+        {
+          "name": "grey-50",
+          "slug": "grey-50",
+          "color": "#f5f5f5",
           "origin": "theme"
         },
         {

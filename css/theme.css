@@ -17,9 +17,10 @@
   --col-charcoal: #1d1d1d;
   --col-orange: #ef7c23;
   --col-orange-dark: #d8690f;
-  --col-coral: #e95b3d;
+  --col-coral: #eb5a3d;
   --col-coral-light: #fef4eb;
   --col-cream: #f6efe7;
+  --col-grey-50: #f5f5f5;
   --col-grey-100: #f0f0f0;
   --col-grey-300: #d9d9d9;
   --col-grey-700: #4a4f63;
@@ -2525,7 +2526,7 @@ article h2[id] {
 	flex-direction: column;
 	height: 100%;
 	border-radius: var(--radius-lg);
-	background: var(--col-cream);
+	background: var(--col-grey-50);
 	transition: transform 250ms ease;
 }
 
@@ -2837,9 +2838,9 @@ article h2[id] {
 	gap: 1rem;
 	height: 100%;
 	padding: 1.5rem;
-	border: 1px solid rgb(31 36 65 / 0.12);
-	border-radius: var(--radius-lg);
-	background: var(--col-white);
+	border: 1px solid var(--col-navy);
+	border-radius: var(--radius-sm);
+	background: transparent;
 }
 
 .linkedin-card__head {
@@ -3236,7 +3237,7 @@ a.service-tile:focus-visible {
 	position: absolute;
 	left: 1.1rem;
 	top: 0.9rem;
-	color: var(--col-orange);
+	color: var(--col-coral);
 	font-size: 3rem;
 	font-weight: var(--fw-700);
 	line-height: 1;

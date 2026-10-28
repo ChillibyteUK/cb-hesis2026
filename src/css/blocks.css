@@ -128,7 +128,7 @@
 	flex-direction: column;
 	height: 100%;
 	border-radius: var(--radius-lg);
-	background: var(--col-cream);
+	background: var(--col-grey-50);
 	transition: transform 250ms ease;
 }
 
@@ -442,9 +442,9 @@
 	gap: 1rem;
 	height: 100%;
 	padding: 1.5rem;
-	border: 1px solid rgb(31 36 65 / 0.12);
-	border-radius: var(--radius-lg);
-	background: var(--col-white);
+	border: 1px solid var(--col-navy);
+	border-radius: var(--radius-sm);
+	background: transparent;
 }
 
 .linkedin-card__head {
@@ -849,7 +849,7 @@ a.service-tile:focus-visible {
 	position: absolute;
 	left: 1.1rem;
 	top: 0.9rem;
-	color: var(--col-orange);
+	color: var(--col-coral);
 	font-size: 3rem;
 	font-weight: var(--fw-700);
 	line-height: 1;

@@ -47,9 +47,9 @@ Colours sampled from the JPG:
 | `--col-navy` | `#1f2441` | stats band, footer, outline buttons |
 | `--col-charcoal` | `#1d1d1d` | accreditation band, hero fallback |
 | `--col-orange` | `#ef7c23` | primary buttons, kickers, testimonials band |
-| `--col-coral` | `#e95b3d` | service tile icons, sectors curve, CTA band |
+| `--col-coral` | `#eb5a3d` | service tile icons, sectors curve, CTA band |
 | `--col-coral-light` | `#fef4eb` | sectors accordion |
-| `--col-cream` | `#f6efe7` | case study cards |
+| `--col-grey-50` | `#f5f5f5` | case study cards |
 | `--col-grey-100` | `#f0f0f0` | services and LinkedIn bands |
 
 Font: Poppins, self-hosted in `fonts/` (400-800), declared in `src/css/typography.css`.
