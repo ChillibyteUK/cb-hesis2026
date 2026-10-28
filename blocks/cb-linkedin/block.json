@@ -10,6 +10,14 @@
 			"type": "string",
 			"default": ""
 		},
+		"source": {
+			"type": "string",
+			"default": "Live feed"
+		},
+		"limit": {
+			"type": "number",
+			"default": 0
+		},
 		"profileUrl": {
 			"type": "string",
 			"default": ""

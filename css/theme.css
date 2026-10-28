@@ -2943,6 +2943,19 @@ article h2[id] {
 		color: var(--col-white);
 	}
 
+.linkedin-card__image {
+	display: block;
+	margin-inline: -1.5rem;
+	border-block: 1px solid rgb(31 36 65 / 0.12);
+}
+
+.linkedin-card__image img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+	}
+
 .linkedin-card__text {
 	margin: 0;
 	font-size: var(--fs-body-sm);

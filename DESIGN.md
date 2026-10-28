@@ -100,7 +100,6 @@ disclosure, tracking IDs and raw script slots (CookieYes goes in Head).
 - LinkedIn feed approach and the company page URL; social URLs for the footer.
 - Office addresses, legal entity details, Client Portal URL, cookie consent script.
 - Real case study copy; the three entries carry the design's titles and photos only.
-- Footer tagline year: the design says "since 1990", the content doc "since 2007".
 
 ## Seeding
 

@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
-import { TextControl } from '@wordpress/components';
+import { TextControl, RadioControl } from '@wordpress/components';
 import RepeaterField from '../../_shared/RepeaterField';
 import EditorBlockShell from '../../_shared/EditorBlockShell';
 
@@ -14,7 +14,7 @@ const postsFields = [
 const postsEmptyRow = { author: '', meta: '', text: '', postUrl: '' };
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
-	const { kicker, profileUrl, posts } = attributes;
+	const { kicker, source, limit, profileUrl, posts } = attributes;
 	const blockProps = useBlockProps( { className: 'container cb-hesis2026-editor-block' } );
 
 	return (
@@ -28,6 +28,31 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			/>
 				</div>
 				<div style={ { flex: '50 1 0%' } }>
+			<RadioControl
+				label={ __( 'Source', 'cb-hesis2026' ) }
+				selected={ source }
+				options={ [
+					{ label: 'Live feed', value: 'Live feed' },
+					{ label: 'Manual rows', value: 'Manual rows' },
+				] }
+				onChange={ ( value ) => setAttributes( { source: value } ) }
+				help={ __( 'Live feed needs the CBP LinkedIn Feed plugin connected (Settings > LinkedIn Feed); it falls back to the manual rows while nothing is cached.', 'cb-hesis2026' ) }
+			/>
+				</div>
+			</div>
+			<div style={ { display: 'flex', flexWrap: 'wrap', gap: '12px' } }>
+				<div style={ { flex: '50 1 0%' } }>
+			{ source === 'Live feed' && (
+			<TextControl
+				type="number"
+				label={ __( 'Limit', 'cb-hesis2026' ) }
+				value={ limit }
+				onChange={ ( value ) => setAttributes( { limit: Number( value ) } ) }
+				help={ __( 'How many live posts to show. 0 for three.', 'cb-hesis2026' ) }
+			/>
+			) }
+				</div>
+				<div style={ { flex: '50 1 0%' } }>
 			<TextControl
 				label={ __( 'Profile URL', 'cb-hesis2026' ) }
 				value={ profileUrl }
@@ -36,6 +61,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			/>
 				</div>
 			</div>
+			{ source === 'Manual rows' && (
 			<RepeaterField
 				label={ __( 'Posts', 'cb-hesis2026' ) }
 				value={ posts }
@@ -44,6 +70,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				emptyRow={ postsEmptyRow }
 				layout="column"
 			/>
+			) }
 		</EditorBlockShell>
 	);
 }

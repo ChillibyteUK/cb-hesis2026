@@ -2,8 +2,11 @@
 /**
  * Block template for CB LinkedIn.
  *
- * Three post cards on a grey band. Posts are entered manually for now; swap
- * the repeater for a feed once a LinkedIn integration is agreed.
+ * Three post cards on a grey band. Source "Live feed" reads the cache kept by
+ * the CBP LinkedIn Feed plugin (cbp_linkedin_feed_get_posts()); "Manual rows"
+ * uses the repeater. Live feed falls back to the manual rows while the plugin
+ * is absent, not connected or has nothing cached, so the section never goes
+ * blank.
  *
  * @package cb-hesis2026
  */
@@ -12,12 +15,35 @@ defined( 'ABSPATH' ) || exit;
 
 $kicker      = $attributes['kicker'] ?? '';
 $profile_url = $attributes['profileUrl'] ?? '';
-$posts       = array_filter(
-	(array) ( $attributes['posts'] ?? array() ),
-	function ( $item ) {
-		return ! empty( $item['text'] );
+$source      = $attributes['source'] ?? 'Live feed';
+$limit       = absint( $attributes['limit'] ?? 0 );
+$posts       = array();
+$is_live     = false;
+
+if ( 'Live feed' === $source && function_exists( 'cbp_linkedin_feed_get_posts' ) ) {
+	foreach ( cbp_linkedin_feed_get_posts( $limit > 0 ? $limit : 3 ) as $live ) {
+		if ( empty( $live['text'] ) ) {
+			continue;
+		}
+		$posts[] = array(
+			'author'  => $live['author'] ?? '',
+			'meta'    => cbp_linkedin_feed_relative_time( $live ),
+			'text'    => $live['text'],
+			'postUrl' => $live['url'] ?? '',
+			'image'   => $live['image'] ?? '',
+		);
 	}
-);
+	$is_live = (bool) $posts;
+}
+
+if ( ! $posts ) {
+	$posts = array_filter(
+		(array) ( $attributes['posts'] ?? array() ),
+		function ( $item ) {
+			return ! empty( $item['text'] );
+		}
+	);
+}
 
 if ( ! $posts ) {
 	return;
@@ -72,7 +98,14 @@ $wrapper_attributes = get_block_wrapper_attributes( array( 'class' => 'linkedin 
 					}
 					?>
 				</header>
-				<p class="linkedin-card__text"><?php echo esc_html( $item['text'] ); ?></p>
+				<?php
+				if ( ! empty( $item['image'] ) ) {
+					?>
+				<a class="linkedin-card__image" href="<?php echo esc_url( $post_url ); ?>" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="<?php echo esc_url( $item['image'] ); ?>" alt="" loading="lazy"></a>
+					<?php
+				}
+				?>
+				<p class="linkedin-card__text"><?php echo esc_html( wp_trim_words( $item['text'], $is_live ? 40 : 200, '…' ) ); ?></p>
 			</article>
 				<?php
 			}

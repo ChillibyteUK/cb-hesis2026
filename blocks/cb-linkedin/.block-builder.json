@@ -22,6 +22,52 @@
 			"enable_aspect_ratio": false
 		},
 		{
+			"label": "Source",
+			"type": "radio",
+			"help": "Live feed needs the CBP LinkedIn Feed plugin connected (Settings > LinkedIn Feed); it falls back to the manual rows while nothing is cached.",
+			"width": 50,
+			"options": "[Live feed], Manual rows",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "source",
+			"snake": "source",
+			"sub_fields": [],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_linkedin_source",
+			"conditional_logic": [],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		},
+		{
+			"label": "Limit",
+			"type": "number",
+			"help": "How many live posts to show. 0 for three.",
+			"width": 50,
+			"options": "",
+			"textarea_style": "paragraph",
+			"link_target": false,
+			"name": "limit",
+			"snake": "limit",
+			"sub_fields": [],
+			"repeater_layout": "row",
+			"post_type_slug": "",
+			"field_key": "field_plvrjog36h",
+			"conditional_logic": [
+				[
+					{
+						"field": "field_linkedin_source",
+						"operator": "==",
+						"value": "Live feed"
+					}
+				]
+			],
+			"allowed_extensions": "",
+			"enable_focal_point": false,
+			"enable_aspect_ratio": false
+		},
+		{
 			"label": "Profile URL",
 			"type": "url",
 			"help": "The HESIS LinkedIn company page.",
@@ -91,7 +137,15 @@
 			"repeater_layout": "column",
 			"post_type_slug": "",
 			"field_key": "field_jooxpd5kf0",
-			"conditional_logic": [],
+			"conditional_logic": [
+				[
+					{
+						"field": "field_linkedin_source",
+						"operator": "==",
+						"value": "Manual rows"
+					}
+				]
+			],
 			"allowed_extensions": "",
 			"enable_focal_point": false,
 			"enable_aspect_ratio": false
