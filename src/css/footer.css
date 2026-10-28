@@ -36,7 +36,8 @@
 	margin-bottom: var(--space-4);
 
 	& .logo {
-		width: 9rem;
+		width: auto;
+		height: 5rem;
 	}
 
 	& .logo__mark--a,

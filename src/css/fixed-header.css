@@ -12,7 +12,7 @@
  */
 
 :root {
-	--nav-height-mobile: 64px;
+	--nav-height-mobile: 72px;
 }
 
 @media (max-width: 991px) {

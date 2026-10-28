@@ -7,10 +7,12 @@
  * .scrolled (src/js/header-scroll.js). Everything else is solid from load.
  */
 
+/* Sized by height so the mark plus tagline always sits inside the header
+   bar: 52px tall on a phone (72px bar), up to 76px on desktop (96px bar). */
 .logo {
 	display: block;
-	width: clamp(8rem, 12vw, 10.5rem);
-	height: auto;
+	width: auto;
+	height: clamp(3.25rem, 5.5vw, 4.75rem);
 }
 
 .logo__mark--a {

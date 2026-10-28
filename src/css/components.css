@@ -4,6 +4,12 @@
 	padding-block: var(--section-y);
 }
 
+/* A section straight after a curved band already has the arc as breathing
+   room, so it opens with less of its own. */
+.curve-bottom + .section {
+	padding-top: clamp(1rem, 2.5vw, 2rem);
+}
+
 /* Convex curve at the foot of a dark band, drawn in the page background. The
    element is 120vw wide so the arc stays shallow on wide screens; the band
    carries overflow-x: clip. */

@@ -724,10 +724,12 @@ strong {
  * .scrolled (src/js/header-scroll.js). Everything else is solid from load.
  */
 
+/* Sized by height so the mark plus tagline always sits inside the header
+   bar: 52px tall on a phone (72px bar), up to 76px on desktop (96px bar). */
 .logo {
 	display: block;
-	width: clamp(8rem, 12vw, 10.5rem);
-	height: auto;
+	width: auto;
+	height: clamp(3.25rem, 5.5vw, 4.75rem);
 }
 
 .logo__mark--a {
@@ -910,7 +912,8 @@ body.has-hero #masthead:not(.scrolled) {
 }
 
 .site-footer__logo .logo {
-		width: 9rem;
+		width: auto;
+		height: 5rem;
 	}
 
 .site-footer__logo .logo__mark--a,.site-footer__logo .logo__mark--b,.site-footer__logo .logo__text,.site-footer__logo .logo__sub {
@@ -1039,6 +1042,12 @@ body.has-hero #masthead:not(.scrolled) {
 
 .section {
 	padding-block: var(--section-y);
+}
+
+/* A section straight after a curved band already has the arc as breathing
+   room, so it opens with less of its own. */
+.curve-bottom + .section {
+	padding-top: clamp(1rem, 2.5vw, 2rem);
 }
 
 /* Convex curve at the foot of a dark band, drawn in the page background. The
@@ -2437,7 +2446,9 @@ article h2[id] {
    ========================= */
 .accreditations {
 	position: relative;
-	padding-block: 2.5rem clamp(5rem, 10vw, 8.5rem);
+	/* Bottom padding = the white curve's height plus a little clearance, so the
+	   logos sit just above the arc as in the design rather than far above it. */
+	padding-block: 2.5rem calc(clamp(40px, 7vw, 110px) + 2rem);
 	background: var(--col-charcoal);
 }
 
@@ -3349,7 +3360,7 @@ a.service-tile:focus-visible {
  */
 
 :root {
-	--nav-height-mobile: 64px;
+	--nav-height-mobile: 72px;
 }
 
 @media (max-width: 991px) {

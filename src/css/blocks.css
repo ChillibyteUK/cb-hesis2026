@@ -7,7 +7,9 @@
    ========================= */
 .accreditations {
 	position: relative;
-	padding-block: 2.5rem clamp(5rem, 10vw, 8.5rem);
+	/* Bottom padding = the white curve's height plus a little clearance, so the
+	   logos sit just above the arc as in the design rather than far above it. */
+	padding-block: 2.5rem calc(clamp(40px, 7vw, 110px) + 2rem);
 	background: var(--col-charcoal);
 }
 
