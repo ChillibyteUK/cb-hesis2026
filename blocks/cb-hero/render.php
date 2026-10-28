@@ -17,7 +17,7 @@ $intro        = $attributes['intro'] ?? '';
 $image_id     = absint( $attributes['backgroundImageId'] ?? 0 );
 $focal        = $attributes['backgroundImageFocalPoint'] ?? array();
 $bottom_curve = ! empty( $attributes['bottomCurve'] );
-$position     = sprintf( '%s%% %s%%', round( ( $focal['x'] ?? 0.5 ) * 100, 2 ), round( ( $focal['y'] ?? 0.5 ) * 100, 2 ) );
+$focal_style  = sprintf( '--focal-x: %s%%; --focal-y: %s%%', round( ( $focal['x'] ?? 0.5 ) * 100, 2 ), round( ( $focal['y'] ?? 0.5 ) * 100, 2 ) );
 
 $classes = array( 'hero', 'on-dark' );
 if ( $bottom_curve ) {
@@ -39,7 +39,7 @@ $wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( '
 			array(
 				'fetchpriority' => 'high',
 				'loading'       => 'eager',
-				'style'         => 'object-position: ' . esc_attr( $position ),
+				'style'         => esc_attr( $focal_style ),
 			)
 		);
 		?>

@@ -16,7 +16,7 @@ $heading  = $attributes['heading'] ?? '';
 $intro    = $attributes['intro'] ?? '';
 $image_id = absint( $attributes['backgroundImageId'] ?? 0 );
 $focal    = $attributes['backgroundImageFocalPoint'] ?? array();
-$position = sprintf( '%s%% %s%%', round( ( $focal['x'] ?? 0.5 ) * 100, 2 ), round( ( $focal['y'] ?? 0.5 ) * 100, 2 ) );
+$focal_style = sprintf( '--focal-x: %s%%; --focal-y: %s%%', round( ( $focal['x'] ?? 0.5 ) * 100, 2 ), round( ( $focal['y'] ?? 0.5 ) * 100, 2 ) );
 $sectors  = array_filter(
 	(array) ( $attributes['sectors'] ?? array() ),
 	function ( $sector ) {
@@ -32,7 +32,7 @@ $wrapper_attributes = get_block_wrapper_attributes( array( 'class' => 'sectors o
 	if ( $image_id ) {
 		?>
 	<div class="sectors__bg" aria-hidden="true">
-		<?php echo wp_get_attachment_image( $image_id, 'full', false, array( 'loading' => 'lazy', 'style' => 'object-position: ' . esc_attr( $position ) ) ); ?>
+		<?php echo wp_get_attachment_image( $image_id, 'full', false, array( 'loading' => 'lazy', 'style' => esc_attr( $focal_style ) ) ); ?>
 	</div>
 		<?php
 	}
