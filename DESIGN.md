@@ -83,6 +83,11 @@ Font: Poppins, self-hosted in `fonts/` (400-800), declared in `src/css/typograph
 10. `[andwis_block]` shortcode.
 11. **CB CTA** - coral band, heading, office line + phone from Site-Wide Settings, navy button. Goes last: the footer curve rises into it.
 
+Added for the About page (9 Nov 2026):
+
+- **CB Timeline** - kicker, heading, intro, repeater of milestones (year, title, description) on a navy band along a rule; vertical on phones.
+- **CB Link Cards** - kicker, heading, intro, repeater of cards (title, text, link) as white cards on grey with an arrow link. Signposting to other pages.
+
 ## Site-Wide Settings
 
 `inc/options.php`: email, phone, Client Portal URL (header pill, hidden when blank),
