@@ -1,0 +1,105 @@
+/* =========================
+   CB TIMELINE
+   ========================= */
+.timeline {
+	background: var(--col-navy);
+}
+
+.timeline__header {
+	max-width: 40rem;
+	margin-bottom: clamp(2rem, 4vw, 3.5rem);
+
+	& h2 {
+		margin-bottom: 0.75rem;
+	}
+}
+
+.timeline__intro {
+	opacity: 0.85;
+}
+
+/* Vertical by default: a rule down the left with a dot per milestone. */
+.timeline__list {
+	display: grid;
+	gap: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.timeline__item {
+	position: relative;
+	padding: 0 0 2rem 1.75rem;
+	border-left: 2px solid rgb(255 255 255 / 0.18);
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0.35rem;
+		left: -0.5rem;
+		width: 0.875rem;
+		height: 0.875rem;
+		border-radius: 50%;
+		background: var(--col-orange);
+		box-shadow: 0 0 0 4px var(--col-navy);
+	}
+}
+
+.timeline__year {
+	display: block;
+	margin-bottom: 0.5rem;
+	color: var(--col-orange);
+	font-size: var(--fs-h3);
+	font-weight: var(--fw-700);
+	line-height: 1;
+	letter-spacing: -0.015em;
+}
+
+.timeline__title {
+	margin: 0 0 0.5rem;
+	font-size: var(--fs-h5);
+	color: var(--col-white);
+}
+
+.timeline__text {
+	font-size: var(--fs-small);
+	opacity: 0.85;
+
+	& p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Horizontal from tablet up: the rule runs along the top, one column per
+   milestone, dot at the start of each. */
+@media (min-width: 768px) {
+	.timeline__list {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 2.5rem;
+	}
+
+	.timeline__item {
+		padding: 2rem 2rem 0 0;
+		border-left: 0;
+		border-top: 2px solid rgb(255 255 255 / 0.18);
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+
+		&::before {
+			top: -0.5rem;
+			left: 0;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.timeline__list {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
