@@ -91,20 +91,29 @@ disclosure, tracking IDs and raw script slots (CookieYes goes in Head).
 
 ## Still needed from the client
 
-- Accreditation marks: all sixteen from the content doc are in the band. Five
-  came from the design file; the rest were taken from the bodies' own public
-  files (LPCB from BRE's PN103 guidance PDF, NICEIC Approved Contractor from
-  the scheme rules PDF, NSI Gold from nsi.org.uk). FIA, BAFE, Gas Safe, dhf and
-  REFCOM are the bodies' corporate logos; the member/registered-organisation
-  versions (BAFE's carries the registration ID, LPCB wants the certificate
-  number alongside) should replace them once HESIS supplies them from the
-  member portals.
+Received 9 Nov 2026 and applied: Client Portal URL, LinkedIn company URL,
+registered company details, three office addresses (Liverpool HQ, Crawley,
+Nantwich), the ten homepage services (five new service holding pages and five
+new `img/icons/icon-*.svg` drawn in the design's disc style), and LIFT CERT
+removed from the accreditation band.
+
+- Accreditation marks: the client is checking them all. Cyber Essentials is to
+  become Cyber Essentials Plus, but that mark is only issued through the
+  certified organisation's IASME / certification-body portal, so HESIS must
+  supply it; the standard badge stays until then. The client also mentioned
+  attached replacement logos that have not reached us. FIA, BAFE, Gas Safe,
+  dhf and REFCOM are still the bodies' corporate logos pending member versions.
+  Sources for the current set: five from the design file, LPCB from BRE's
+  PN103 guidance PDF, NICEIC Approved Contractor from the scheme rules PDF,
+  NSI Gold from nsi.org.uk, the rest from the bodies' public sites.
 - LinkedIn: the `cbp-linkedin-feed` plugin is installed and the block reads
   from it. It goes live once Chillibyte's LinkedIn app is approved for the
   Community Management API and a HESIS Page Super Admin clicks Connect
-  (Settings > LinkedIn Feed). Company page URL and social URLs for the footer.
-- Office addresses, legal entity details, Client Portal URL, cookie consent script.
+  (Settings > LinkedIn Feed). No third-party feed service is needed.
+- YouTube or other social URLs if wanted (only LinkedIn supplied), cookie
+  consent script, analytics IDs, stats figures decision.
 - Real case study copy; the three entries carry the design's titles and photos only.
+- Copy for the five new service pages and the pre-existing ones.
 
 ## Seeding
 

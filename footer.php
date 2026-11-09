@@ -132,7 +132,7 @@
 				</div>
 			</div>
 			<div class="site-footer__legal d-flex flex-column flex-lg-row justify-content-between gap-2">
-				<div>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> HESIS Ltd. All rights reserved. An <strong>andwis.</strong> group company.</div>
+				<div>&copy; <?php echo esc_html( gmdate( 'Y' ) . ' ' . ( $cb_hesis2026_legal_name ? $cb_hesis2026_legal_name : 'HESIS Ltd' ) ); ?>. All rights reserved. An <strong>andwis.</strong> group company.</div>
 				<?php
 				if ( $cb_hesis2026_legal_pages ) {
 					?>
