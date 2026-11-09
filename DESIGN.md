@@ -105,12 +105,15 @@ removed from the accreditation band.
 - Accreditation marks: the client is checking them all. Cyber Essentials is to
   become Cyber Essentials Plus, but that mark is only issued through the
   certified organisation's IASME / certification-body portal, so HESIS must
-  supply it; the standard badge stays until then. The client also mentioned
-  attached replacement logos that have not reached us. FIA, BAFE, Gas Safe,
-  dhf and REFCOM are still the bodies' corporate logos pending member versions.
-  Sources for the current set: five from the design file, LPCB from BRE's
-  PN103 guidance PDF, NICEIC Approved Contractor from the scheme rules PDF,
-  NSI Gold from nsi.org.uk, the rest from the bodies' public sites.
+  supply it; the standard badge stays until then. The client's attached marks
+  arrived 9 Nov 2026 (REFCOM F-Gas Certification, SSIP Accredited, LPCB with
+  the UKAS mark, and a new F-Gas Register badge) and replaced ours in the band
+  via `uploads/cb-seed/logos-nov.php`; they are small files (106 to 155px
+  wide, fine at the band's 48px height but soft on retina), so higher-res
+  versions would be welcome. FIA, BAFE, Gas Safe and dhf are still the
+  bodies' corporate logos pending member versions. Sources for the rest: five
+  from the design file, NICEIC Approved Contractor from the scheme rules PDF,
+  NSI Gold from nsi.org.uk, the others from the bodies' public sites.
 - LinkedIn: the `cbp-linkedin-feed` plugin is installed and the block reads
   from it. It goes live once Chillibyte's LinkedIn app is approved for the
   Community Management API and a HESIS Page Super Admin clicks Connect
