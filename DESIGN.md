@@ -102,10 +102,11 @@ Nantwich), the ten homepage services (five new service holding pages and five
 new `img/icons/icon-*.svg` drawn in the design's disc style), and LIFT CERT
 removed from the accreditation band.
 
-- Accreditation marks: the client is checking them all. Cyber Essentials is to
-  become Cyber Essentials Plus, but that mark is only issued through the
-  certified organisation's IASME / certification-body portal, so HESIS must
-  supply it; the standard badge stays until then. The client's attached marks
+- Accreditation marks: the client is checking them all. Cyber Essentials is now
+  the Cyber Essentials Certified Plus badge, cut out from a screenshot the
+  client sent on 10 Nov 2026 (125 x 150px, `uploads/cb-seed/ce-plus.php`);
+  the original artwork from their IASME / certification-body portal would be
+  better. The client's attached marks
   arrived 9 Nov 2026 (REFCOM F-Gas Certification, SSIP Accredited, LPCB with
   the UKAS mark, and a new F-Gas Register badge) and replaced ours in the band
   via `uploads/cb-seed/logos-nov.php`; they are small files (106 to 155px
